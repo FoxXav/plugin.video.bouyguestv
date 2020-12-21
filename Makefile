@@ -12,7 +12,7 @@ ADDON_PACKAGE_FILE = $(ADDON_ID)-$(VERSION).zip
 ICON_SIZE = 512
 
 KODI_ADDON_DIR = $(HOME)/.kodi/addons
-KODI_BRANCH = leia
+KODI_BRANCH = matrix
 
 
 all: package
