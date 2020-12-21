@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.bouyguestv" name="Bouygues Telecom PCTV" version="1.0.0" provider-name="melmorabity">
+  <requires>
+    <import addon="xbmc.python" version="2.26.0" />
+    <import addon="script.module.dateutil" version="2.8.1" />
+    <import addon="script.module.pyjwt" version="1.6.4" />
+    <import addon="script.module.requests" version="2.22.0" />
+    <import addon="script.module.requests-cache" version="0.4.13" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon_entry.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <summary lang="en_GB">Bouygues Telecom PCTV</summary>
+    <summary lang="fr_FR">TV sur PC Bouygues Telecom</summary>
+    <description lang="en_GB">This addon allows Bouygues Telecom customers to watch PCTV channels from Kodi.</description>
+    <description lang="fr_FR">Cette extension permet aux clients Bouygues Telecom d'accéder aux chaînes de télévision sur PC depuis Kodi.</description>
+    <disclaimer lang="en_GB">This addon is unofficial and not related to Bouygues Telecom</disclaimer>
+    <disclaimer lang="fr_FR">Cette extension n'est pas officielle et n'a aucun lien avec Bouygues Telecom</disclaimer>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <website>https://www.bouyguestelecom.fr/tv-direct/</website>
+    <source>https://github.com/melmorabity/plugin.video.bouyguestv/</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+    <news>v1.0.0 (2020-12-21)
+    - Initial version</news>
+  </extension>
+</addon>

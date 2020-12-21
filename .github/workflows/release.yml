@@ -1,0 +1,41 @@
+---
+name: Generate release
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Install build tools
+        run: |
+          sudo apt-get install -y curl jq libxml2-utils librsvg2-bin make zip
+      - name: Build addon
+        run: make package
+      - name: Define package name
+        id: package_name
+        run: |
+          echo ::set-output name=PACKAGE_NAME::${GITHUB_REPOSITORY#*/}-${GITHUB_REF#refs/tags/}.zip
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ steps.package_name.outputs.PACKAGE_NAME }}
+          asset_name: ${{ steps.package_name.outputs.PACKAGE_NAME }}
+          asset_content_type: application/zip
