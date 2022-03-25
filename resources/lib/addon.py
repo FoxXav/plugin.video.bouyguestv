@@ -81,7 +81,7 @@ class BouyguesTVAddon:
 
         if not self._ADDON.getSetting("username"):
             self._ADDON.openSettings()
-
+        lastname  = self._ADDON.getSetting("lastname")
         username = self._ADDON.getSetting("username")
         password = self._ADDON.getSetting("password")
         access_token = (
@@ -93,6 +93,7 @@ class BouyguesTVAddon:
         )
 
         self._api = BouyguesTV(
+            lastname,
             username,
             password,
             access_token=access_token,

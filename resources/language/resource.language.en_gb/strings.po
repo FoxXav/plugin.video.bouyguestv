@@ -25,6 +25,10 @@ msgctxt "#30101"
 msgid "Password"
 msgstr ""
 
+msgctxt "#30102"
+msgid "Lastname"
+msgstr ""
+
 msgctxt "#30200"
 msgid "Authentication failed"
 msgstr ""

@@ -106,6 +106,7 @@ class BouyguesTV:
     # pylint: disable=too-many-arguments
     def __init__(
         self,
+        lastname, 
         username,
         password,
         access_token=None,
@@ -113,7 +114,7 @@ class BouyguesTV:
         cache_name="bouyguestv",
     ):
         # type: (Text, Text, Optional[Text], Optional[Text], Text) -> None
-
+        self._lastname = lastname
         self._username = username
         self._password = password
 
@@ -174,6 +175,7 @@ class BouyguesTV:
                 response.text,
             )
         )
+        payload["lastname"] = self._lastname
         payload["username"] = self._username
         payload["password"] = self._password
 
