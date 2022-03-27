@@ -4,7 +4,7 @@ This addon allows Bouygues Telecom customers to watch [PCTV channels](https://ww
 
 ### Dependencies
 
-* Kodi 18 or higher
+* Kodi 19 or higher
 * script.module.beautifulsoup4
 * script.module.inputstreamhelper
 * script.module.requests
